@@ -1,0 +1,41 @@
+{
+  "manifest_schema_version": 1,
+  "methodology_version": "0.1",
+  "config_hash_algorithm": "sha256",
+  "config_hash_canonicalization": "RFC8785-JCS",
+  "config_hash_schema_version": 1,
+  "config_hash": "42ba7f43dae4ff4f54ee45a8ccf4618cb2995ac586f4e6e72639a672cb56b702",
+  "semantic_config": {
+    "schema_version": 1,
+    "methodology_version": "0.1",
+    "mode": "miracle",
+    "target_origin": "locally_generated_synthetic",
+    "randomize_order": false,
+    "repetitions_per_case": 1000,
+    "timeout_seconds": 120,
+    "gpu_id": 0,
+    "cpu_threads": 0,
+    "telemetry_interval_ms": 100,
+    "cooldown": {
+      "enabled": true,
+      "start_below_c": 65,
+      "poll_seconds": 2
+    },
+    "cases": [
+      {
+        "bits": 64,
+        "grid": {
+          "x": 24,
+          "y": 128
+        },
+        "dp_bits": 10,
+        "actual_kangaroo_count": 393216,
+        "actual_kangaroo_count_source": "solver_output"
+      }
+    ],
+    "solver_seed_control": "unavailable_upstream",
+    "store_private_keys": false,
+    "accept_external_targets": false
+  },
+  "canonical_config_utf8": "{\"accept_external_targets\":false,\"cases\":[{\"actual_kangaroo_count\":393216,\"actual_kangaroo_count_source\":\"solver_output\",\"bits\":64,\"dp_bits\":10,\"grid\":{\"x\":24,\"y\":128}}],\"cooldown\":{\"enabled\":true,\"poll_seconds\":2,\"start_below_c\":65},\"cpu_threads\":0,\"gpu_id\":0,\"methodology_version\":\"0.1\",\"mode\":\"miracle\",\"randomize_order\":false,\"repetitions_per_case\":1000,\"schema_version\":1,\"solver_seed_control\":\"unavailable_upstream\",\"store_private_keys\":false,\"target_origin\":\"locally_generated_synthetic\",\"telemetry_interval_ms\":100,\"timeout_seconds\":120}"
+}

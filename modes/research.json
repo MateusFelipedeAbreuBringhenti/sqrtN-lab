@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "methodology_version": "0.1",
+  "mode": "research",
+  "target_origin": "locally_generated_synthetic",
+  "randomize_order": true,
+  "repetitions_per_case": 100,
+  "timeout_seconds": 120,
+  "gpu_id": 0,
+  "cpu_threads": 0,
+  "telemetry_interval_ms": 100,
+  "cooldown": {"enabled": true, "start_below_c": 65, "poll_seconds": 2},
+  "cases": [
+    {"bits": 56, "grid": {"x": 24, "y": 128}, "dp_bits": 10, "actual_kangaroo_count": 393216, "actual_kangaroo_count_source": "solver_output"},
+    {"bits": 60, "grid": {"x": 24, "y": 128}, "dp_bits": 10, "actual_kangaroo_count": 393216, "actual_kangaroo_count_source": "solver_output"},
+    {"bits": 62, "grid": {"x": 24, "y": 128}, "dp_bits": 10, "actual_kangaroo_count": 393216, "actual_kangaroo_count_source": "solver_output"},
+    {"bits": 64, "grid": {"x": 24, "y": 128}, "dp_bits": 10, "actual_kangaroo_count": 393216, "actual_kangaroo_count_source": "solver_output"}
+  ],
+  "solver_seed_control": "unavailable_upstream",
+  "store_private_keys": false,
+  "accept_external_targets": false,
+  "config_hash_algorithm": "sha256",
+  "config_hash_canonicalization": "RFC8785-JCS",
+  "config_hash_schema_version": 1
+}

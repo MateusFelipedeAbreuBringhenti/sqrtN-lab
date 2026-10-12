@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/sqrtn-lab/telemetry-sample.schema.json",
+  "title": "sqrtN-lab telemetry sample",
+  "type": "object",
+  "required": ["timestamp"],
+  "properties": {
+    "timestamp": {"type": "string"},
+    "temperature.gpu": {"type": ["number", "null"]},
+    "utilization.gpu": {"type": ["number", "null"]},
+    "memory.used": {"type": ["number", "null"]},
+    "power.draw": {"type": ["number", "null"]},
+    "clocks.sm": {"type": ["number", "null"]},
+    "clocks.mem": {"type": ["number", "null"]}
+  },
+  "additionalProperties": true
+}

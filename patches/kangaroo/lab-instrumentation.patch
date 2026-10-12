@@ -1,0 +1,31 @@
+diff --git a/Timer.h b/Timer.h
+index 36ccd27..5255167 100644
+--- a/Timer.h
++++ b/Timer.h
+@@ -21,2 +21,3 @@
+ #include <time.h>
++#include <cstdint>
+ #include <string>
+diff --git a/Kangaroo.cpp b/Kangaroo.cpp
+index 4ce2a50..a6c7b8d 100644
+--- a/Kangaroo.cpp
++++ b/Kangaroo.cpp
+@@ -1052,4 +1052,18 @@ void Kangaroo::Run(int nbThread,std::vector<int> gpuId,std::vector<int> gridSize
+       Process(params,"MK/s");
+       JoinThreads(thHandles,nbCPUThread + nbGPUThread);
+       FreeHandles(thHandles,nbCPUThread + nbGPUThread);
++
++      // Machine-readable laboratory instrumentation. GPU work is counted in
++      // completed parallel batches; there is no fictional serial ordering
++      // within the final batch that contains the useful collision.
++      uint64_t completedOperations = getCPUCount() + getGPUCount();
++      uint64_t operationResolution = 1;
++      if(nbGPUThread > 0) {
++        operationResolution = 0;
++        for(int i = 0; i < nbGPUThread; i++)
++          operationResolution += params[nbCPUThread + i].nbKangaroo * NB_RUN;
++      }
++      ::printf("\nLAB_RESULT key_index=%d observed_operations=%llu expected_operations=%.0f operation_resolution=%llu kangaroos=%llu\n",
++        keyIdx, (unsigned long long)completedOperations, expectedNbOp,
++        (unsigned long long)operationResolution, (unsigned long long)totalRW);
+       hashTable.Reset();

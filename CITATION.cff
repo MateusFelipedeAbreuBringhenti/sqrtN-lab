@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "sqrtN-lab: Experimental Pollard Kangaroo Runtime Statistics on secp256k1"
+message: "If you use this laboratory, cite the repository commit and experiment manifest."
+type: software
+version: 0.1.0
+license: GPL-3.0-only
+date-released: 2026-10-12
+authors:
+  - name: "sqrtN-lab contributors"

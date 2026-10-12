@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "methodology_version": "0.1",
+  "mode": "smoke",
+  "target_origin": "locally_generated_synthetic",
+  "randomize_order": true,
+  "repetitions_per_case": 1,
+  "timeout_seconds": 30,
+  "gpu_id": 0,
+  "cpu_threads": 0,
+  "telemetry_interval_ms": 100,
+  "cases": [
+    {"bits": 20, "grid": {"x": 1, "y": 64}, "dp_bits": 4, "actual_kangaroo_count": 8192, "actual_kangaroo_count_source": "solver_output"},
+    {"bits": 24, "grid": {"x": 1, "y": 64}, "dp_bits": 4, "actual_kangaroo_count": 8192, "actual_kangaroo_count_source": "solver_output"},
+    {"bits": 28, "grid": {"x": 1, "y": 64}, "dp_bits": 4, "actual_kangaroo_count": 8192, "actual_kangaroo_count_source": "solver_output"}
+  ],
+  "solver_seed_control": "unavailable_upstream",
+  "store_private_keys": false,
+  "accept_external_targets": false,
+  "config_hash_algorithm": "sha256",
+  "config_hash_canonicalization": "RFC8785-JCS",
+  "config_hash_schema_version": 1
+}

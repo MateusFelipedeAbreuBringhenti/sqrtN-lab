@@ -1,0 +1,3 @@
+[submodule "vendor/Kangaroo"]
+	path = vendor/Kangaroo
+	url = https://github.com/JeanLucPons/Kangaroo.git

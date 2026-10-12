@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/sqrtn-lab/experiment-manifest.schema.json",
+  "title": "sqrtN-lab experiment manifest",
+  "type": "object",
+  "required": ["manifest_schema_version", "methodology_version", "config_hash", "semantic_config"],
+  "properties": {
+    "manifest_schema_version": {"const": 1},
+    "methodology_version": {"const": "0.1"},
+    "config_hash_algorithm": {"const": "sha256"},
+    "config_hash_canonicalization": {"const": "RFC8785-JCS"},
+    "config_hash_schema_version": {"const": 1},
+    "config_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "semantic_config": {"type": "object"},
+    "hardware": {"type": "object"},
+    "solver": {"type": "object"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/sqrtn-lab/run-result.schema.json",
+  "title": "sqrtN-lab run result",
+  "type": "object",
+  "required": [
+    "schema_version", "run_id", "bits", "challenge_hash", "target_origin",
+    "status", "solution_found", "verified", "wall_seconds"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_id": {"type": "string"},
+    "bits": {"type": "integer", "minimum": 1, "maximum": 125},
+    "challenge_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "target_origin": {"const": "locally_generated_synthetic"},
+    "status": {"enum": ["completed", "censored", "failed"]},
+    "solution_found": {"type": "boolean"},
+    "verified": {"type": "boolean"},
+    "wall_seconds": {"type": "number", "minimum": 0},
+    "expected_operations": {"type": ["integer", "null"], "minimum": 0},
+    "observed_operations": {"type": ["integer", "null"], "minimum": 0},
+    "operation_resolution": {"type": ["integer", "null"], "minimum": 1},
+    "observed_until_lower_bound": {"type": ["integer", "null"], "minimum": 0},
+    "actual_kangaroo_count": {"type": ["integer", "null"], "minimum": 1},
+    "luck_factor": {"type": ["number", "null"], "exclusiveMinimum": 0},
+    "c": {"type": ["number", "null"], "exclusiveMinimum": 0},
+    "telemetry": {"type": "object"}
+  },
+  "additionalProperties": true
+}
