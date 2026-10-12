@@ -26,3 +26,17 @@ mode is suitable for correctness but not tail inference.
 These validation datasets are deliberately ignored by Git. The committed mode
 configuration freezes the first full research campaign at 100 repetitions per
 case; operators should choose when to spend the GPU time.
+
+## Clean-environment reproduction
+
+On 2026-10-12, a fresh local clone was initialized with its pinned submodule and
+a new Python virtual environment. Installing only `requirements.txt` plus the
+test runner produced:
+
+- 6/6 Python tests passed.
+- 3/3 smoke runs completed and recovered secrets verified in memory.
+- Smoke cases covered 20, 24, and 28 bits in randomized order.
+
+The externally built CUDA solver required its CUDA 12 runtime directory in
+`LD_LIBRARY_PATH`; without that loader configuration it could not locate
+`libcudart.so.12`. The README now documents this runtime prerequisite explicitly.

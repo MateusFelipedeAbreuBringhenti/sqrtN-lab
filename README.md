@@ -36,6 +36,10 @@ python -m venv .venv
 make patch-solver
 make freeze-manifests
 
+# Required when the CUDA runtime is not already in the system loader path.
+export CUDA_HOME=/absolute/path/to/cuda
+export LD_LIBRARY_PATH="$CUDA_HOME/targets/x86_64-linux/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+
 .venv/bin/python scripts/run_experiment.py \
   --mode smoke \
   --binary /absolute/path/to/kangaroo \
@@ -51,6 +55,9 @@ The full methodology is in [docs/methodology.md](docs/methodology.md).
 To build the patched solver, set `CUDA_HOME`, `HOST_CXX`, and optionally
 `CUDA_CCAP` (defaults to 89), then run `make build-solver`. CUDA/glibc compiler
 compatibility is distribution-specific and is documented rather than hidden.
+The solver also needs the CUDA runtime libraries to be discoverable at runtime;
+use the `LD_LIBRARY_PATH` example above when they are not installed in a system
+loader directory.
 
 ## Primary quantities
 
